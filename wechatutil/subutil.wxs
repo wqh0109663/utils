@@ -1,0 +1,21 @@
+var sub = function(val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  var split = val.indexOf('——')
+  console.log(split)
+  if (split > 0) {
+    var first = val.substring(0, split);
+    console.log(first)
+    var last = val.substring(split + 2);
+    console.log(last)
+    val = first + last;
+    console.log(val)
+  }
+  if (val.length > 18) {
+    return val.substring(0, 18) + "...";
+  } else {
+    return val;
+  }
+}
+module.exports.sub = sub;
